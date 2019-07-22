@@ -98,6 +98,7 @@ function main() {
 
   enterVR = function enterVR() {
     navigator.xr.requestSession("immersive-vr").then((s) => {
+      if (xrSession) { return; }
       xrSession = s;
       xrSession.requestReferenceSpace("local")
       .then((referenceSpace) => {
@@ -131,6 +132,9 @@ function main() {
       xrSession.requestAnimationFrame(vrCallback);
     });
   };
+
+  // HACK DO NOT MERGE!!!!!
+  window.addEventListener('load', enterVR);  
 }
 
 
