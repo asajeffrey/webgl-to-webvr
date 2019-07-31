@@ -201,7 +201,7 @@ function initBuffers(gl) {
 // entry point for WebVR, called by vrCallback()
 function renderVR(gl, programInfo, buffers, deltaTime) {
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(0.5, 0.5, 0.5, 1.0);  // Clear to grey, fully opaque
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
     gl.clearDepth(1.0);                 // Clear everything
     gl.enable(gl.DEPTH_TEST);           // Enable depth testing
     gl.depthFunc(gl.LEQUAL);            // Near things obscure far things
